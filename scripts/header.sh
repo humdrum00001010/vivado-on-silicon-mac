@@ -34,7 +34,7 @@ function validate_linux {
 }
 
 function validate_internet {
-    if ! ping -q -c1 google.com &>/dev/null
+    if ! curl -s --connect-timeout 5 https://www.google.com &>/dev/null
     then
         f_echo "Internet connection required."
         exit 1

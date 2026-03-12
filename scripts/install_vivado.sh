@@ -24,6 +24,9 @@ do
 	sleep 1
 done
 
+# Limit Java heap to prevent OOM kills during download/install
+export JAVA_TOOL_OPTIONS="-Xmx2g"
+
 # Run installer
 f_echo "You successfully logged into your account. The installation will begin now."
 eula_args="XilinxEULA,3rdPartyEULA"
